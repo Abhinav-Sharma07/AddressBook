@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form method="post">
+    <div class="mb-3">
+        <label>Name</label>
+        <input type="text" name="name" value="{{ contact.name if contact else '' }}" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Father Name</label>
+        <input type="text" name="fathername" value="{{ contact.fathername if contact else '' }}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Father Mobile</label>
+        <input type="text" name="fathermobile" value="{{ contact.fathermobile if contact else '' }}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Father Email</label>
+        <input type="email" name="fatheremail" value="{{ contact.fatheremail if contact else '' }}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Mother Name</label>
+        <input type="text" name="mothername" value="{{ contact.mothername if contact else '' }}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Mother Mobile</label>
+        <input type="text" name="mothermobile" value="{{ contact.mothermobile if contact else '' }}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Mother Email</label>
+        <input type="email" name="motheremail" value="{{ contact.motheremail if contact else '' }}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label>Address</label>
+        <textarea name="address" class="form-control">{{ contact.address if contact else '' }}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ action }} Contact</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
